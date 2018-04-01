@@ -5,7 +5,7 @@ class Account:
 
 	account_list = []
 
-	def __init__(self,account_name,email,first_name,last_name,number):
+	def __init__(self,account_name,email,user_name,number):
 		'''
 		__init__ method that helps us define properties for our objects.
 
@@ -13,6 +13,5 @@ class Account:
 
 		self.account_name = account_name
 		self.email = email
-		self.fisrt_name = first_name
-		self.last_name = last_name
+		self.user_name = user_name
 		self.number = number
