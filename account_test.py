@@ -51,11 +51,20 @@ class TestAccount(unittest.TestCase):
     	'''
     	test_delete_account to test if an account can be deleted from the account_list
     	'''
-    	self.new_account.save_contact()
-    	Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607").save_contact()
+    	self.new_account.save_account()
+    	Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607").save_account()
     	self.new_account.delete_account()
     	self.assertEqual(len(Account.account_list),1)
-       
+    def test_find_account_by_number(self):
+    	'''
+    	test_find_account_by_number to test if an account can be found by number and details displayed
+    	'''
+    	self.new_account.save_account()
+    	test_account = Account("Test","user","0711223344","test@user.com")
+    	test_account.save_account() 
+
+    	found_account = Account.find_by_number("0711223344")
+    	self.assertEqual(found_account.email,test_account.email)  
 
 
 if __name__ == '__main__':
