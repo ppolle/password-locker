@@ -63,7 +63,8 @@ class TestAccount(unittest.TestCase):
     	test_account = Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607")
     	test_account.save_account()
     	found_account = Account.find_by_number("0725603607")
-    	#self.assertEqual(found_account.email,"peter.m.polle@gmail.com")  
+    	#self.assertEqual(found_account.email,"peter.m.polle@gmail.com")
+    	  
     def test_display_all_accounts(self):
     	'''
     	method that returns all contacts saved
@@ -81,7 +82,7 @@ class TestAccount(unittest.TestCase):
 
         account_exists = Account.account_exist("0711223344")
 
-        self.assertTrue(Account.account_exist("0711223344"))
+        self.assertTrue(account_exists)
 
 if __name__ == '__main__':
     unittest.main()

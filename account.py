@@ -43,3 +43,15 @@ class Account:
 		method that returns the account list
 		'''
 		return cls.account_list
+
+	@classmethod
+	def account_exist(cls,number):
+		'''
+		Method that checks if an account exists from the account list.
+		
+		'''
+		for account in cls.account_list:
+			if account.number == number:
+				return True
+
+		return False
