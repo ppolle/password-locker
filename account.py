@@ -27,17 +27,12 @@ class Account:
 		'''
 		Account.account_list.remove(self)
 
+
 	@classmethod
-    def find_by_number(cls,number):
-        '''
-        Method that takes in a number and returns an account that matches that number.
-
-        Args:
-            number: Phone number to search for
-        Returns :
-            Account that matches that number.
-        '''
-
-        for account in cls.account_list:
-            if account.number == number:
-                return account
+	def find_by_number(cls, number):
+		'''
+    	Method that takes in an account name and returns credentials that match that number
+    	'''
+		for account in cls.account_list:
+			if account.number == number:
+				return number
