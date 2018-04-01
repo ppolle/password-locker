@@ -37,8 +37,18 @@ class TestAccount(unittest.TestCase):
     	'''
     	self.new_account.save_account() # saving the new account
     	self.assertEqual(len(Account.account_list),1)
-        
 
+    def test_save_multiple_accounts(self):
+    	'''
+    	test_save_multiple_accounts to check if we can save multiple accounts
+            objects to our account_list
+    	'''
+    	
+    	self.new_account.save_account()
+    	Account("github","peter.m.polle@gmail.com","MrPolle","0725603607").save_account()
+    	self.assertEqual(len(Account.account_list),2)
+
+       
 
 
 if __name__ == '__main__':
