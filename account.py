@@ -15,3 +15,9 @@ class Account:
 		self.email = email
 		self.user_name = user_name
 		self.number = number
+
+	def save_account(self):
+		'''
+		save-account method saves account objects into account_list
+		'''
+		Account.account_list.append(self)

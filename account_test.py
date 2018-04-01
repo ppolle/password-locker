@@ -36,7 +36,7 @@ class TestAccount(unittest.TestCase):
          the account list
     	'''
     	self.new_account.save_account() # saving the new account
-    	self.assertEqual()
+    	self.assertEqual(len(Account.account_list),1)
         
 
 
