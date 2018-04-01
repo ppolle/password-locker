@@ -47,7 +47,14 @@ class TestAccount(unittest.TestCase):
     	self.new_account.save_account()
     	Account("github","peter.m.polle@gmail.com","MrPolle","0725603607").save_account()
     	self.assertEqual(len(Account.account_list),2)
-
+    def test_delete_account(self):
+    	'''
+    	test_delete_account to test if an account can be deleted from the account_list
+    	'''
+    	self.new_account.save_contact()
+    	Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607").save_contact()
+    	self.new_account.delete_account()
+    	self.assertEqual(len(Account.account_list),1)
        
 
 
