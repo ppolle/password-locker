@@ -61,10 +61,14 @@ class TestAccount(unittest.TestCase):
     	'''
     	self.new_account.save_account()
     	test_account = Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607")
-    	test_account.save_account() 
+    	test_account.save_account()
     	found_account = Account.find_by_number("0725603607")
-    	#self.assertEqual(found_account.email,test_account.email)  
-
+    	#self.assertEqual(found_account.email,"peter.m.polle@gmail.com")  
+    def test_display_all_accounts(self):
+    	'''
+    	method that returns all contacts saved
+    	'''
+    	self.assertEqual(Account.display_account(),Account.account_list)
 
 if __name__ == '__main__':
     unittest.main()

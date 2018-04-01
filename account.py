@@ -31,8 +31,15 @@ class Account:
 	@classmethod
 	def find_by_number(cls, number):
 		'''
-    	Method that takes in an account name and returns credentials that match that number
+    	Method that takes in an account number and returns credentials that match that number
     	'''
 		for account in cls.account_list:
 			if account.number == number:
 				return number
+
+	@classmethod
+	def display_account(cls):
+		'''
+		method that returns the account list
+		'''
+		return cls.account_list
