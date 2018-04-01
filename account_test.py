@@ -70,5 +70,18 @@ class TestAccount(unittest.TestCase):
     	'''
     	self.assertEqual(Account.display_account(),Account.account_list)
 
+    def test_account_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the contact.
+        '''
+
+        self.new_account.save_account()
+        test_account = Account("Test","user","0711223344","test@user.com") # new contact
+        test_account.save_account()
+
+        account_exists = Account.account_exist("0711223344")
+
+        self.assertTrue(Account.account_exist("0711223344"))
+
 if __name__ == '__main__':
     unittest.main()
