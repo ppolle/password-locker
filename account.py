@@ -37,7 +37,7 @@ class Account:
     	'''
 		for account in cls.account_list:
 			if account.number == number:
-				return number
+				return account
 
 	@classmethod
 	def display_account(cls):

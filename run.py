@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-from account import account
+from account import Account
 from user import User
 
 def create_user_account(name,email,password):
@@ -33,3 +33,31 @@ def save_account(account):
 	Function to create new account
 	'''
 	account.save_account()
+def delete_account(account):
+	'''
+	Function to delete an acount
+	'''
+	account.delete_account()
+
+def find_account(number):
+	'''
+	Function that finds an account using th ephone number and returns the account
+	'''
+	return Account.find_by_number(number)
+
+def check_if_account_exists(number):
+	'''
+	Function that checks if an account exists
+	'''
+	return Account.account_exist(number)
+def display_accounts():
+	'''
+	Function that returns all saved contacts
+	'''
+	return Account.display_account()
+
+def generate_password(pass_length):
+	'''
+	Function that generates a password
+	'''
+	return Account.generate_password(pass_length)

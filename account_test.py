@@ -77,7 +77,7 @@ class TestAccount(unittest.TestCase):
         '''
 
         self.new_account.save_account()
-        test_account = Account("Test","user","0711223344","test@user.com") # new contact
+        test_account = Account("Test","test@user.com","DonJohn","0711223344") # new contact
         test_account.save_account()
 
         account_exists = Account.account_exist("0711223344")

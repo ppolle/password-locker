@@ -50,7 +50,7 @@ class TestUser(unittest.TestCase):
 		test_user = User("Thor Odinson","thor@asgard.com","12345")
 		test_user.save_user()
 
-		find_user = User.user_login("thor@asgard")
+		find_user = User.user_login("thor@asgard.com")
 		self.assertEqual(find_user.email,test_user.email)
 
 if __name__ == '__main__':
