@@ -8,9 +8,9 @@ On average a person has at least 5-10 different accounts he or she has signed in
 
 With the application, a user will be able to:
 
-*create an account with their details - log in and password.
-*Store their existing login credentials.
-*Generate a password for a new credential/account
+* create an account with their details - log in and password.
+* Store their existing login credentials.
+* Generate a password for a new credential/account
 
 ### Prerequisites
 
