@@ -13,7 +13,7 @@ class TestAccount(unittest.TestCase):
         set up method to before each test case.
         '''
 
-        self.new_account = Account("facebook", "peter.m.polle@gmail.com", "ppolle", "0725603607")
+        self.new_account = Account("facebook", "peter.m.polle@gmail.com", "ppolle", "0725603607","12345")
 
     def tearDown(self):
         '''
@@ -29,6 +29,7 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(self.new_account.email, "peter.m.polle@gmail.com")
         self.assertEqual(self.new_account.user_name, "ppolle")
         self.assertEqual(self.new_account.number, "0725603607")
+        self.assertEqual(self.new_account.password, "12345")
 
     def test_save_account(self):
     	'''
@@ -45,25 +46,25 @@ class TestAccount(unittest.TestCase):
     	'''
     	
     	self.new_account.save_account()
-    	Account("github","peter.m.polle@gmail.com","MrPolle","0725603607").save_account()
+    	Account("github","peter.m.polle@gmail.com","MrPolle","0725603607","45678").save_account()
     	self.assertEqual(len(Account.account_list),2)
     def test_delete_account(self):
     	'''
     	test_delete_account to test if an account can be deleted from the account_list
     	'''
     	self.new_account.save_account()
-    	Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607").save_account()
+    	Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607","458675").save_account()
     	self.new_account.delete_account()
     	self.assertEqual(len(Account.account_list),1)
-    def test_find_account_by_number(self):
+    def test_find_account_by_email(self):
     	'''
     	test_find_account_by_number to test if an account can be found by number and details displayed
     	'''
     	self.new_account.save_account()
-    	test_account = Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607")
+    	test_account = Account("twitter","peter.m.polle@gmail.com","MrPolle","0725603607","344545")
     	test_account.save_account()
-    	found_account = Account.find_by_number("0725603607")
-    	#self.assertEqual(found_account.email,"peter.m.polle@gmail.com")
+    	found_account = Account.find_by_email("peter.m.polle@gmail.com")
+    	self.assertEqual(found_account.email,test_account.email)
     	  
     def test_display_all_accounts(self):
     	'''
@@ -77,10 +78,10 @@ class TestAccount(unittest.TestCase):
         '''
 
         self.new_account.save_account()
-        test_account = Account("Test","test@user.com","DonJohn","0711223344") # new contact
+        test_account = Account("Test","test@user.com","DonJohn","0711223344","233535") # new contact
         test_account.save_account()
 
-        account_exists = Account.account_exist("0711223344")
+        account_exists = Account.account_exist("test@user.com")
 
         self.assertTrue(account_exists)
 

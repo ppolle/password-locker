@@ -7,7 +7,7 @@ class Account:
 
 	account_list = []
 
-	def __init__(self,account_name,email,user_name,number):
+	def __init__(self,account_name,email,user_name,number,password):
 		'''
 		__init__ method that helps us define properties for our objects.
 
@@ -17,6 +17,7 @@ class Account:
 		self.email = email
 		self.user_name = user_name
 		self.number = number
+		self.password =password
 
 	def save_account(self):
 		'''
@@ -31,12 +32,12 @@ class Account:
 
 
 	@classmethod
-	def find_by_number(cls, number):
+	def find_by_email(cls, email):
 		'''
     	Method that takes in an account number and returns credentials that match that number
     	'''
 		for account in cls.account_list:
-			if account.number == number:
+			if account.email == email:
 				return account
 
 	@classmethod
@@ -47,13 +48,13 @@ class Account:
 		return cls.account_list
 
 	@classmethod
-	def account_exist(cls,number):
+	def account_exist(cls,email):
 		'''
 		Method that checks if an account exists from the account list.
 		
 		'''
 		for account in cls.account_list:
-			if account.number == number:
+			if account.email == email:
 				return True
 
 		return False
