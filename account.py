@@ -1,3 +1,5 @@
+import string
+import random
 class Account:
 	'''
 	Class that generates new instances of accounts/credentials
@@ -55,3 +57,12 @@ class Account:
 				return True
 
 		return False
+
+	@classmethod
+	def generate_password(cls,pass_length):
+		'''
+		class to generate passowrds
+		'''
+		allchar = string.ascii_letters + string.punctuation + string.digits
+		password = ''.join(random.sample(allchar, int(pass_length)))
+		return password

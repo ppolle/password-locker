@@ -17,3 +17,12 @@ class User:
 		saves user objects into user_list
 		'''
 		User.user_list.append(self)
+	
+	@classmethod
+	def user_login(cls,email):
+		'''
+		Method that finds a user and logs them in
+		'''
+		for user in cls.user_list:
+			if user.email == email:
+				return email
