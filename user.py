@@ -4,11 +4,12 @@ class User:
 	'''
 	user_list = []
 
-	def __init__(self, login_name, password):
+	def __init__(self, login_name,email,password):
 		'''
 		this method ddefines properties for our user object
 		'''
 		self.login_name = login_name
+		self.email = email
 		self.password = password
 	
 	def save_user(self):
