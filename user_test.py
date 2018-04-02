@@ -52,6 +52,14 @@ class TestUser(unittest.TestCase):
 
 		find_user = User.user_login("thor@asgard.com")
 		self.assertEqual(find_user.email,test_user.email)
+	def test_user_exists(self):
+		'''
+		Test case to acertain that a user exists
+		'''
+		self.new_user.save_user()
+		test_user = User("martin Luther King","martin@luther.king","12345").save_user()
+		user_exists = User.user_exist("martin@luther.king")
+		self.assertTrue(user_exists)
 
 if __name__ == '__main__':
     unittest.main()

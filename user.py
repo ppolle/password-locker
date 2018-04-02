@@ -26,3 +26,5 @@ class User:
 		for user in cls.user_list:
 			if user.email == email:
 				return user
+
+	
